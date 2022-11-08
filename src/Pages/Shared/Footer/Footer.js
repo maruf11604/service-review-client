@@ -3,7 +3,7 @@ import logo from "../../../assects/image/logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-pink-500 text-white">
+    <div className="bg-pink-500 text-white w-9/12 mx-auto">
       <footer className="footer p-10 ">
         <div>
           <img style={{ height: "200px" }} src={logo} alt="" />
@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
       </footer>
       <p className="text-sm text-center">
-        <p>&copy; Copyright 2022, north star</p>
+        <p>&copy; Copyright 2022, traveler</p>
       </p>
     </div>
   );
