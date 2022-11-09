@@ -1,5 +1,6 @@
 import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ServiceDetail = ({ service }) => {
   console.log(service);
@@ -25,7 +26,9 @@ const ServiceDetail = ({ service }) => {
             <p className="font-bold">Price: ${price}</p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-secondary">View Details</button>
+            <button className="btn btn-secondary font-bold">
+              <Link to={`/services/${_id}`}>View Details</Link>
+            </button>
           </div>
         </div>
       </div>
