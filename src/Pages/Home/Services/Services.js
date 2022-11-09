@@ -9,10 +9,13 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div className=" py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:ml-16  gap-12 ">
-      {services.map((service) => (
-        <ServiceDetail key={service._id} service={service}></ServiceDetail>
-      ))}
+    <div>
+      <h1 className="text-center text-3xl font-bold">Service</h1>
+      <div className=" py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   gap-12 ">
+        {services.map((service) => (
+          <ServiceDetail key={service._id} service={service}></ServiceDetail>
+        ))}
+      </div>
     </div>
   );
 };
