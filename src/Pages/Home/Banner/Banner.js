@@ -34,7 +34,7 @@ const Banner = () => {
   ];
   return (
     <div>
-      <div className="carousel w-9/12 mx-auto">
+      <div className="carousel ">
         {bannerDatas.map((slide) => (
           <BannerItem key={slide.id} slide={slide}></BannerItem>
         ))}
