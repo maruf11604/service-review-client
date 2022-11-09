@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { logOut, user } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut();
+  };
   const menuItems = (
     <>
       <li>
@@ -9,7 +16,17 @@ const Header = () => {
         <Link to="/">Home</Link>{" "}
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        {user?.uid ? (
+          <>
+            <Link>Myreview</Link>
+            <Link>AddService</Link>
+            <Link onClick={handleLogOut}>Logout</Link>
+          </>
+        ) : (
+          <>
+            <Link to="/login">Login</Link>
+          </>
+        )}
       </li>
     </>
   );
@@ -46,9 +63,7 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        <a href="/" className="btn">
-          Get started
-        </a>
+        <Link>{user?.email ? user?.displayName : <FaUser></FaUser>}</Link>
       </div>
     </div>
   );

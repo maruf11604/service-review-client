@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
+  const { sinIn, googleLogin } = useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    sinIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleGoogleSign = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <div className="hero min-h-screen bg-pink-200">
@@ -45,7 +67,11 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <input className="btn btn-primary" type="submit" value="Login" />
+              <input
+                className="btn btn-secondary"
+                type="submit"
+                value="Login"
+              />
             </div>
           </form>
           <p className="text-center">
@@ -54,6 +80,12 @@ const Login = () => {
               Signup
             </Link>
           </p>
+          <button
+            className="btn btn-secondary w-3/5 mx-auto my-6"
+            onClick={handleGoogleSign}
+          >
+            Google SignIn
+          </button>
         </div>
       </div>
     </div>
