@@ -12,7 +12,7 @@ const AllServiceDetails = ({ data }) => {
       </figure>
       <div className="card-body bg-pink-400 text-white">
         <h2 className="card-title">{name}</h2>
-        <p>{`${description.slice(0, 100) + " " + "...."} `}</p>
+        <p>{`${description?.slice(0, 100) + " " + "...."} `}</p>
         <div className="flex justify-between ">
           <p className="flex items-center font-bold">
             {rating}

@@ -19,7 +19,7 @@ const Header = () => {
         {user?.uid ? (
           <>
             <Link to="/myreview">Myreview</Link>
-            <Link>AddService</Link>
+            <Link to="/addservice">AddService</Link>
             <Link onClick={handleLogOut}>Logout</Link>
           </>
         ) : (
@@ -27,6 +27,9 @@ const Header = () => {
             <Link to="/login">Login</Link>
           </>
         )}
+      </li>
+      <li>
+        <Link to="/blog">Blog</Link>
       </li>
     </>
   );

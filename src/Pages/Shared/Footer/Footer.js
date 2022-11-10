@@ -1,12 +1,11 @@
 import React from "react";
-import logo from "../../../assects/image/logo.png";
 
 const Footer = () => {
   return (
     <div className="bg-pink-500 text-white">
       <footer className="footer p-10 ">
         <div>
-          <img style={{ height: "200px" }} src={logo} alt="" />
+          <h1 className="text-3xl font-bold">traveler</h1>
         </div>
         <div>
           <span className="footer-title">Services</span>
