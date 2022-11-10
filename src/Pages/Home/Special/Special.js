@@ -17,7 +17,7 @@ const Special = () => {
               If you are a student ,it is time to travel we are offering 50%
             </p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-secondary">Buy Now</button>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@ const Special = () => {
               laxarury room for you.
             </p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-secondary">Buy Now</button>
             </div>
           </div>
         </div>

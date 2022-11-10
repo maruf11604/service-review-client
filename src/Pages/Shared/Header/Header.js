@@ -13,7 +13,9 @@ const Header = () => {
     <>
       <li>
         {" "}
-        <Link to="/">Home</Link>{" "}
+        <Link title="home" to="/">
+          Home
+        </Link>{" "}
       </li>
       <li>
         {user?.uid ? (
@@ -29,7 +31,9 @@ const Header = () => {
         )}
       </li>
       <li>
-        <Link to="/blog">Blog</Link>
+        <Link title="blog" to="/blog">
+          Blog
+        </Link>
       </li>
     </>
   );
