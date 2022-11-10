@@ -20,20 +20,24 @@ const AuthProvider = ({ children }) => {
 
   //google login
   const googleLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   //signup
   const signUp = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //login
   const sinIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   //SIGN OUT
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
@@ -41,13 +45,22 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       return unsubscribe();
     };
   }, []);
 
-  const authInfo = { user, loading, signUp, sinIn, logOut, googleLogin };
+  const authInfo = {
+    user,
+    loading,
+    signUp,
+    sinIn,
+    logOut,
+    googleLogin,
+    setLoading,
+  };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
