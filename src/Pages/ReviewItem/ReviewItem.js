@@ -15,13 +15,15 @@ const ReviewItem = ({ details }) => {
   const { data: review = [], refetch } = useQuery({
     queryKey: ["reviews"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/reviews`);
+      const res = await fetch(
+        `https://service-review-assignment-server-mocha.vercel.app/reviews`
+      );
       const data = await res.json();
       return data;
     },
   });
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/reviews`)
+  //   fetch(`https://service-review-assignment-server-mocha.vercel.app/reviews`)
   //     .then((res) => res.json())
   //     .then((data) => setReview(data));
   // }, []);
@@ -30,7 +32,7 @@ const ReviewItem = ({ details }) => {
     event.preventDefault();
     console.log(userdata);
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://service-review-assignment-server-mocha.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

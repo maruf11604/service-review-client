@@ -12,7 +12,9 @@ const AllService = () => {
   } = useQuery({
     queryKey: ["allservices"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/allservices`);
+      const res = await fetch(
+        `https://service-review-assignment-server-mocha.vercel.app/allservices`
+      );
       const data = await res.json();
       return data;
     },

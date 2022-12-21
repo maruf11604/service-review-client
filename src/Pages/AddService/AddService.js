@@ -10,13 +10,16 @@ const AddService = () => {
     event.preventDefault();
     console.log(userdata);
 
-    fetch("http://localhost:5000/allservices", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(userdata),
-    })
+    fetch(
+      "https://service-review-assignment-server-mocha.vercel.app/allservices",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userdata),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         event.target.reset();
