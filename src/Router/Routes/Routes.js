@@ -28,10 +28,6 @@ const router = createBrowserRouter([
             <AllService></AllService>
           </PrivateRoute>
         ),
-        loader: () =>
-          fetch(
-            `https://service-review-assignment-server-mocha.vercel.app/allservices`
-          ),
       },
       {
         path: "/services/:id",
@@ -41,9 +37,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://service-review-assignment-server-mocha.vercel.app/services/${params.id}`
-          ),
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
         path: "/login",

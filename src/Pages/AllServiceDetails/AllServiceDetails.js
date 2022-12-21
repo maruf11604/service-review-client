@@ -2,8 +2,9 @@ import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const AllServiceDetails = ({ data }) => {
+const AllServiceDetails = ({ data, refetch }) => {
   console.log(data);
+  refetch();
   const { _id, service_id, rating, price, picture, name, description } = data;
   return (
     <div className="card card-compact w-full bg-base-100 shadow-xl">

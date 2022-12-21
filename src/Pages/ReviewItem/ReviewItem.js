@@ -1,27 +1,36 @@
-import { data } from "autoprefixer";
-import React, { useContext, useEffect, useState } from "react";
+import { async } from "@firebase/util";
+import { useQuery } from "@tanstack/react-query";
+
+import React, { useContext, useState } from "react";
 import { FaUser } from "react-icons/fa";
-import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const ReviewItem = ({ details }) => {
   console.log(details);
   const { service_id } = details;
-  const { user, setLoading } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [userdata, setUser] = useState({});
-  const [review, setReview] = useState([]);
+  // const [review, setReview] = useState([]);
 
-  useEffect(() => {
-    fetch(`https://service-review-assignment-server-mocha.vercel.app/reviews`)
-      .then((res) => res.json())
-      .then((data) => setReview(data));
-  }, []);
+  const { data: review = [], refetch } = useQuery({
+    queryKey: ["reviews"],
+    queryFn: async () => {
+      const res = await fetch(`http://localhost:5000/reviews`);
+      const data = await res.json();
+      return data;
+    },
+  });
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/reviews`)
+  //     .then((res) => res.json())
+  //     .then((data) => setReview(data));
+  // }, []);
 
   const handleReview = (event) => {
     event.preventDefault();
     console.log(userdata);
-    setLoading(true);
-    fetch("https://service-review-assignment-server-mocha.vercel.app/reviews", {
+
+    fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -32,6 +41,7 @@ const ReviewItem = ({ details }) => {
       .then((data) => {
         if (data.acknowledged) {
           event.target.reset();
+          refetch();
         }
       });
   };

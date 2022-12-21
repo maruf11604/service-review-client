@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { toast } from "react-hot-toast";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const AddService = () => {
@@ -8,23 +9,18 @@ const AddService = () => {
   const handleReview = (event) => {
     event.preventDefault();
     console.log(userdata);
-    setLoading(true);
 
-    fetch(
-      "https://service-review-assignment-server-mocha.vercel.app/allservices",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(userdata),
-      }
-    )
+    fetch("http://localhost:5000/allservices", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userdata),
+    })
       .then((res) => res.json())
       .then((data) => {
-        if (data.acknowledged) {
-          event.target.reset();
-        }
+        event.target.reset();
+        toast.success("service added");
       });
   };
   const handleBlur = (event) => {

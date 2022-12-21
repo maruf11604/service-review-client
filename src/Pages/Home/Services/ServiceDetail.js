@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
-const ServiceDetail = ({ service }) => {
+const ServiceDetail = ({ service, refetch }) => {
   console.log(service);
+  refetch();
   const { _id, service_id, rating, price, picture, name, description } =
     service;
   return (

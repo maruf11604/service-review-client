@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 import ReviewData from "./ReviewData";
 const MyReviews = () => {
-  const { user, setLoading } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [review, setReview] = useState([]);
   useEffect(() => {
-    fetch(`https://service-review-assignment-server-mocha.vercel.app/reviews`)
+    fetch(`http://localhost:5000/reviews`)
       .then((res) => res.json())
       .then((data) => {
         setReview(data);
@@ -15,12 +15,9 @@ const MyReviews = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("are you sure to delete review");
     if (proceed) {
-      fetch(
-        `https://service-review-assignment-server-mocha.vercel.app/reviews/${id}`,
-        {
-          method: "DELETE",
-        }
-      )
+      fetch(`http://localhost:5000/reviews/${id}`, {
+        method: "DELETE",
+      })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -34,16 +31,13 @@ const MyReviews = () => {
   };
 
   const handleStatusUpdate = (id) => {
-    fetch(
-      `https://service-review-assignment-server-mocha.vercel.app/reviews/${id}`,
-      {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ status: "Approved" }),
-      }
-    )
+    fetch(`http://localhost:5000/reviews/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "Approved" }),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
