@@ -24,7 +24,7 @@ const AllServiceDetails = ({ data }) => {
           <p className="font-bold">Price: ${price}</p>
         </div>
         <div className="card-actions justify-end">
-          <button className="btn btn-secondary font-bold">
+          <button className="btn bg-gradient-to-r from-indigo-500 font-bold">
             <Link to={`/services/${_id}`}>View Details</Link>
           </button>
         </div>
