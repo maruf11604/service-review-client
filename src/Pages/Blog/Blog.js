@@ -3,7 +3,7 @@ import React from "react";
 const Blog = () => {
   return (
     <div className="grid   lg:grid-cols-2 sm:grid-cols-1  py-5 gap-5">
-      <div className="card w-full bg-pink-400 shadow-xl">
+      <div className="card w-full bg-slate-400 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">
             Difference between SQL <br /> and NoSQL?
@@ -22,7 +22,7 @@ const Blog = () => {
           </p>
         </div>
       </div>
-      <div className="card w-full bg-pink-400 shadow-xl">
+      <div className="card w-full bg-slate-400 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">What is JWT, and how does it work?</h2>
           <p>
@@ -39,7 +39,7 @@ const Blog = () => {
           </p>
         </div>
       </div>
-      <div className="card w-full bg-pink-400 shadow-xl">
+      <div className="card w-full bg-slate-400 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">
             What is the difference between javascript and NodeJS?
@@ -52,7 +52,7 @@ const Blog = () => {
           </p>
         </div>
       </div>
-      <div className="card w-full bg-pink-400 shadow-xl">
+      <div className="card w-full bg-slate-400 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">
             How does NodeJS handle multiple requests at the same time?

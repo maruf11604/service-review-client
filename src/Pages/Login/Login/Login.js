@@ -33,7 +33,7 @@ const Login = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="hero min-h-screen bg-pink-200">
+    <div className="hero min-h-screen bg-slate-200">
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>
@@ -73,7 +73,7 @@ const Login = () => {
             </div>
             <div className="form-control mt-6">
               <input
-                className="btn btn-secondary"
+                className="btn bg-gradient-to-r from-indigo-500"
                 type="submit"
                 value="Login"
               />
@@ -81,12 +81,12 @@ const Login = () => {
           </form>
           <p className="text-center">
             if new to this website{" "}
-            <Link className="text-pink-600 font-bold " to="/signup">
+            <Link className="text-slate-600 font-bold " to="/signup">
               Signup
             </Link>
           </p>
           <button
-            className="btn btn-secondary w-3/5 mx-auto my-6"
+            className="btn bg-gradient-to-r from-indigo-500 w-3/5 mx-auto my-6"
             onClick={handleGoogleSign}
           >
             Google SignIn

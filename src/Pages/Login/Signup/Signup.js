@@ -20,7 +20,7 @@ const Signup = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="hero min-h-screen bg-pink-200">
+    <div className="hero min-h-screen bg-slate-200">
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Register now!</h1>
@@ -71,7 +71,7 @@ const Signup = () => {
             </div>
             <div className="form-control mt-6">
               <input
-                className="btn btn-primary"
+                className="btn bg-gradient-to-r from-indigo-500"
                 type="submit"
                 value="Register"
               />
@@ -79,7 +79,7 @@ const Signup = () => {
           </form>
           <p className="text-center">
             if you have a account{" "}
-            <Link className="text-pink-600 font-bold " to="/login">
+            <Link className="text-slate-600 font-bold " to="/login">
               Login
             </Link>
           </p>
