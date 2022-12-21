@@ -9,12 +9,18 @@ const AllCountries = () => {
         </h1>
       </div>
       <div className="grid lg:grid-cols-6 sm:grid-cols-1 gap-4 py-6">
-        <button className=" btn btn-secondary">Bangladesh</button>
-        <button className=" btn btn-secondary">India</button>
-        <button className=" btn btn-secondary">nepal</button>
-        <button className=" btn btn-secondary">Thailand</button>
-        <button className=" btn btn-secondary">China</button>
-        <button className=" btn btn-secondary">Pakistan</button>
+        <button className=" btn bg-gradient-to-r from-indigo-500">
+          Bangladesh
+        </button>
+        <button className=" btn bg-gradient-to-r from-indigo-500">India</button>
+        <button className=" btn bg-gradient-to-r from-indigo-500">nepal</button>
+        <button className=" btn bg-gradient-to-r from-indigo-500">
+          Thailand
+        </button>
+        <button className=" btn bg-gradient-to-r from-indigo-500">China</button>
+        <button className=" btn bg-gradient-to-r from-indigo-500">
+          Pakistan
+        </button>
       </div>
     </div>
   );

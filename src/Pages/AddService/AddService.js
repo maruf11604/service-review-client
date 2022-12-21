@@ -10,13 +10,16 @@ const AddService = () => {
     console.log(userdata);
     setLoading(true);
 
-    fetch("http://localhost:5000/allservices", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(userdata),
-    })
+    fetch(
+      "https://service-review-assignment-server-mocha.vercel.app/allservices",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userdata),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
@@ -88,7 +91,7 @@ const AddService = () => {
           required
         />
         <br />
-        <button type="submit" className="btn btn-secondary">
+        <button type="submit" className="btn bg-gradient-to-r from-indigo-500">
           Add service
         </button>
       </form>

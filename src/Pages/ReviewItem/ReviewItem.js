@@ -12,7 +12,7 @@ const ReviewItem = ({ details }) => {
   const [review, setReview] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews`)
+    fetch(`https://service-review-assignment-server-mocha.vercel.app/reviews`)
       .then((res) => res.json())
       .then((data) => setReview(data));
   }, []);
@@ -21,7 +21,7 @@ const ReviewItem = ({ details }) => {
     event.preventDefault();
     console.log(userdata);
     setLoading(true);
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://service-review-assignment-server-mocha.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -44,13 +44,13 @@ const ReviewItem = ({ details }) => {
     setUser(newUser);
   };
   return (
-    <div className="m-7 p-5 border-4 border-pink-200">
+    <div className="m-7 p-5 border-4 border-slate-200">
       <h1 className="text-center font-bold">Review</h1>
-      <form onSubmit={handleReview}>
+      <form className="text-center" onSubmit={handleReview}>
         <input
           onBlur={handleBlur}
           type="text"
-          className="input input-bordered input-md w-full max-w-xs"
+          className="input input-bordered mb-1 input-md w-full max-w-xs"
           name="name"
           placeholder="name"
           required
@@ -60,7 +60,7 @@ const ReviewItem = ({ details }) => {
           onBlur={handleBlur}
           type="text"
           name="text"
-          className="input input-bordered input-md w-full max-w-xs"
+          className="input mb-1 input-bordered input-md w-full max-w-xs"
           placeholder="text"
           required
         />
@@ -70,7 +70,7 @@ const ReviewItem = ({ details }) => {
           type="text"
           name="imageURL"
           defaultValue={user?.photoURL}
-          className="input input-bordered input-md w-full max-w-xs"
+          className="input mb-1 input-bordered input-md w-full max-w-xs"
           placeholder="imageURL"
           required
         />
@@ -79,7 +79,7 @@ const ReviewItem = ({ details }) => {
           onBlur={handleBlur}
           type="text"
           name="rating"
-          className="input input-bordered input-md w-full max-w-xs"
+          className="input mb-1 input-bordered input-md w-full max-w-xs"
           placeholder="rating"
           required
         />
@@ -89,7 +89,7 @@ const ReviewItem = ({ details }) => {
           type="text"
           name="service_id"
           defaultValue={service_id}
-          className="input input-bordered input-md w-full max-w-xs"
+          className="input mb-1 input-bordered input-md w-full max-w-xs"
           required
         />
         <br />
@@ -98,11 +98,11 @@ const ReviewItem = ({ details }) => {
           type="text"
           name="email"
           defaultValue={user?.email}
-          className="input input-bordered input-md w-full max-w-xs"
+          className="input mb-1 input-bordered input-md w-full max-w-xs"
           required
         />
         <br />
-        <button type="submit" className="btn btn-secondary">
+        <button type="submit" className="btn bg-gradient-to-r from-indigo-500">
           Add review
         </button>
       </form>
@@ -111,7 +111,7 @@ const ReviewItem = ({ details }) => {
         <h1 className="text-center font-bold ">All Review</h1>
         {review.map((r) => (
           <div
-            className="m-5 border-4 rounded-md border-pink-500 p-2"
+            className="m-5 border-4 rounded-md border-slate-500 p-2"
             key={r._id}
           >
             <p>name:{r.name}</p>

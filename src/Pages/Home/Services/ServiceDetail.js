@@ -18,7 +18,7 @@ const ServiceDetail = ({ service }) => {
             </PhotoView>
           </PhotoProvider>
         </figure>
-        <div className="card-body bg-pink-400 text-white">
+        <div className="card-body bg-slate-600 text-white">
           <h2 className="card-title">{name}</h2>
           <p>{`${description.slice(0, 100) + " " + "...."} `}</p>
           <div className="flex justify-between ">
@@ -32,7 +32,7 @@ const ServiceDetail = ({ service }) => {
             <p className="font-bold">Price: ${price}</p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-secondary font-bold">
+            <button className="btn bg-gradient-to-r from-indigo-500 font-bold">
               <Link to={`/services/${_id}`}>View Details</Link>
             </button>
           </div>

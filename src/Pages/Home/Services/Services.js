@@ -5,7 +5,7 @@ import ServiceDetail from "./ServiceDetail";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://service-review-assignment-server-mocha.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -18,7 +18,7 @@ const Services = () => {
         ))}
       </div>
       <div className="text-center">
-        <button className=" my-4   btn btn-secondary font-bold">
+        <button className=" my-4 bg-gradient-to-r from-indigo-500  btn  font-bold">
           {" "}
           <Link to="/allservice">see All</Link>
         </button>

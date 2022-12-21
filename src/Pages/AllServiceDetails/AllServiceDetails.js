@@ -10,7 +10,7 @@ const AllServiceDetails = ({ data }) => {
       <figure>
         <img src={picture} alt="Shoes" />
       </figure>
-      <div className="card-body bg-pink-400 text-white">
+      <div className="card-body bg-slate-600 text-white">
         <h2 className="card-title">{name}</h2>
         <p>{`${description?.slice(0, 100) + " " + "...."} `}</p>
         <div className="flex justify-between ">

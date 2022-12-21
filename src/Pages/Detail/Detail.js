@@ -16,7 +16,7 @@ const Detail = () => {
         <figure>
           <img src={picture} alt="Shoes" />
         </figure>
-        <div className="card-body bg-pink-400 text-white">
+        <div className="card-body bg-slate-600 text-white">
           <h2 className="card-title">{name}</h2>
           <p>{description}</p>
           <div className="flex justify-between ">
@@ -30,7 +30,7 @@ const Detail = () => {
             <p className="font-bold">Price: ${price}</p>
           </div>
           <div className="card-actions justify-between">
-            <button className="btn btn-secondary font-bold">
+            <button className="btn bg-gradient-to-r from-indigo-500 font-bold">
               <Link to={`/services/${_id}`}>Book Now</Link>
             </button>
           </div>
